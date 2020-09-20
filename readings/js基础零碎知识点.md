@@ -75,12 +75,6 @@
 
         if(!Array.isArray) {
             Array.isArray = function(value) {
-                return  Object.prototype.toString().apply(value) === "[object Array]"
-            }
-        }
-
-        if(!Array.isArray) {
-            Array.isArray = function(value) {
                 return  value._proto_.constructor === Array
             }
         }
@@ -124,7 +118,7 @@
         }
         
     ```
-    - 基础数据类型不包含 [[Prototype]] 属性，因此通过
+    - 基础数据类型不包含 [[Prototype]](__proto__) 属性，因此通过
     ```
         value instanceof Constructor 
         // 或者
