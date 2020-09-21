@@ -1,18 +1,17 @@
-function A() {}
-A.prototype.getName = function() {
-    return this.name + 'A';
+function* test() {
+    var a = yield 1;
+    var b = 0;
+    yield 1 + a + b;
+    yield 1 + a + b;
+    yield 1 + a + b;
+    return 1 + a + b;
 }
 
-function B() {}
+const it = test();
+console.log(it.next());
+console.log(it.next(0, 1));
+console.log(it.next(0, 1));
+console.log(it.next(0, 1));
+console.log(it.next(0, 1));
 
-B.prototype = Object.create(new A());
-B.__proto__.constructor = B;
 
-// 重写
-B.prototype.getName = function() {
-    return 'B';
-}
-
-var b = new B();
-var a = new A();
-console.log(b.getName(), a.getName(), b.__proto__.constructor);
