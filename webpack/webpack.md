@@ -18,3 +18,5 @@
     - 代表了一次资源的构建，每次检测到文件改动时就会生成新的 compilation 队像，该对象包含了当前资源的打包信息（模块资源、编译生成资源、变化的文件、以及被跟踪依赖）
 
 #### 多入口文件，编译
+
+#### [package.json字段说明](https://docs.npmjs.com/files/package.json)
